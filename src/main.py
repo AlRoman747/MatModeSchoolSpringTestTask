@@ -12,5 +12,5 @@ tools = [
 agent = AgentOrchestrator(llm, tools)
 
 
-print(agent.ask("какая погода в Питере?"))
-print(agent.ask("Как сдать дискретку?"))
+while text := input():
+    print(agent.ask(text))

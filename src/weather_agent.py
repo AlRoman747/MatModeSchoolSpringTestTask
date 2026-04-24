@@ -1,12 +1,11 @@
 import os
 import requests
-import re
 from dotenv import load_dotenv
-from llm_client import LLMClient
+from src.llm_client import LLMClient
 
 load_dotenv()
 
-def extract_city(message: str) -> str | None:
+def extract_city(message: str) -> str:
     llm = LLMClient()
     res = llm.ask(f"name city from {message}. One word. Only city, noting more. If it not full name, try give full name of city.")
     return res
