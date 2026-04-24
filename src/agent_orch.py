@@ -14,8 +14,10 @@ class AgentOrchestrator:
         return None
 
     def ask(self, message: str) -> str:
-        tool = self.route(message)
 
+        tool = self.route(message)
+        if not tool:
+            return "я могу отвечать только на вопросы о погоде"
         if tool:
             tool_result = tool.run(message)
 
